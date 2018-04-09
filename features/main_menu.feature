@@ -3,3 +3,5 @@ Feature: As a user I want to convert Units and verify my conversion
     Given I land on Home screen
     When I press on Menu icon
     Then I should see left side menu
+    When I press on my Conversion button
+    Then i should land on My conversion screen
