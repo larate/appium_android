@@ -60,7 +60,7 @@ end
 
 
 Then(/^I should see result "([^"]*)"$/) do |result|
- value =  find_element(id: "target_value").text
+  value =  find_element(id: "target_value").text
   if value != result
     fail("expected value is #{result}, actual value is #{value}")
   end
@@ -68,6 +68,9 @@ end
 
 
 When(/^I type "([^"]*)" on application  keybord$/) do |test|
-  find_element(xpath: "//android.widget.Button[@text ='#{test}']").click
+  digits = test.split("")
+  digits.each do |num|
+    find_element(xpath: "//android.widget.Button[@text ='#{num}']").click
+  end
 end
 

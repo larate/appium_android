@@ -9,7 +9,7 @@ Feature:
     Then Left Unit Picker value should be "Gram"
     And Right Unit Picker value should be "Milligram"
 
-@wip
+
   Scenario: User able to add current conversion to Favorites list
     Given I land on Home screen
     Then I press on add to Favorits icon
