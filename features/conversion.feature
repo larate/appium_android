@@ -1,5 +1,5 @@
 Feature:
-
+@conversions
 Scenario: User able to create new conversion
   Given I land on Home screen
   Then  I press on Menu icon
@@ -11,7 +11,7 @@ Scenario: User able to create new conversion
   Then I type "DP" as unit symbol
   Then I type "100" as unit value
   Then I press submit checkmark on Custom conversions screen
-  When I press on New Unit button
+  When I press on New Unit butto
   Then I type "Rubal  power" as unit name
   Then I type "RP" as unit symbol
   Then I type "600" as unit value
