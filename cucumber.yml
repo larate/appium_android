@@ -1,0 +1,2 @@
+home_test:   --format html --out home_test.html --format pretty --tags @acceptance
+conversion_test: --format html --out conversion_test.html --format pretty --tags  @conversions
