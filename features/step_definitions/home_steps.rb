@@ -30,3 +30,47 @@ And(/^Right Unit Picker value should be "([^"]*)"$/) do |right_unit|
     fail("Exepted left unit piker value is #{right_unit}, actual result #{element}")
   end
 end
+
+Then(/^I press on add to Favorits icon$/) do
+  find_element(id: "action_add_favorites").click
+end
+
+Then(/^I press on Favorit conversion$/) do
+  find_element(name: "Favorite conversions").click
+end
+
+And(/^I veryfy  "([^"]*)" added to Favorit conversions list$/) do |arg|
+  find_element(name: "#{arg}")
+
+end
+
+Then(/^Show all button should be (disabled|enabled)$/) do |state|
+  button_state = find_element(id: "btn_show_all").enabled?
+  if state == "enabled"
+
+    puts fail("enabled")if button_state != true
+
+  elsif state == "disabled"
+
+    puts fail("disabled") if button_state !=false
+      end
+
+
+end
+
+
+Then(/^I should see result "([^"]*)"$/) do |result|
+  value =  find_element(id: "target_value").text
+  if value != result
+    fail("expected value is #{result}, actual value is #{value}")
+  end
+end
+
+
+When(/^I type "([^"]*)" on application  keybord$/) do |test|
+  digits = test.split("")
+  digits.each do |num|
+    find_element(xpath: "//android.widget.Button[@text ='#{num}']").click
+  end
+end
+
