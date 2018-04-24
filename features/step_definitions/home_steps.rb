@@ -74,3 +74,26 @@ When(/^I type "([^"]*)" on application  keybord$/) do |test|
   end
 end
 
+
+Then(/^I select "([^"]*)" from menu$/) do |value|
+  text(value).click
+end
+
+Then(/^I select "([^"]*)" from right unit piker$/) do |value|
+
+  find_element(id: "select_unit_spinner").click
+  3.times {Appium::TouchAction.new.swipe(start_x: 0.5,  start_y: 0.2, stop_x: 0.5, stop_y: 0.8, duration:600).perform}
+  until exists{find_element(name: "#{value}")} do
+    Appium::TouchAction.new.swipe(start_x: 0.5, start_y: 0.6, stop_x: 0.5,  stop_y: 0.2, duration:600).perform
+  end
+  #text(value).click
+  find_element(name: "#{value}").click
+
+
+end
+
+
+Then(/^I select droup down menu$/) do
+  Appium::TouchAction.new.tap(x:1014 , y:345, count: 1).perform
+
+end

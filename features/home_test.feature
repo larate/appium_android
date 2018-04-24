@@ -24,16 +24,26 @@ Feature:
       When I type "1" on application  keybord
     Then Show all button should be enabled
 
-  @wip
+
   Scenario Outline: Verify default conversion
     Given I land on Home screen
     When I type "<test>" on application  keybord
     Then I should see result "<result>"
     Examples:
       |  test  | result |
-      |  1   | 30.48  |
-      |  2   | 60.96  |
-      |  3   | 91.44  |
-      |  4   | 121.92 |
-      |  10  |  304.8 |
-      |  100  |  3048 |
+#      |  1   | 30.48  |
+#      |  2   | 60.96  |
+#      |  3   | 91.44  |
+#      |  4   | 121.92 |
+#      |  10  |  304.8 |
+      |  100  |  3 048 |
+
+  @wip
+    Scenario: User is able to convert values
+      Given I land on Home screen
+      Then I press on Menu icon
+      Then I select "Volume" from menu
+      Then I select "Pint" from right unit piker
+      When I type "1" on application  keybord
+      Then I should see result "0.5683"
+
