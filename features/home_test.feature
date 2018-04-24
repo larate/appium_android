@@ -40,7 +40,7 @@ Feature:
       Then Left Unit Picker value should be "Gram"
       And Right Unit Picker value should ve "Milligram"
 
-  @wip
+
 Scenario: User able to select values frome unit pickers
 Given I land on Home screen
 Then I select "Yard"  from left unit piker
@@ -50,6 +50,15 @@ Then I should see result as "91.44"
 #|value| amount| result   |
 #|Inch |  1    | 2.54     |
 #|Link |  1    | 20.1168  |
+
+  @wip
+  Scenario: User able to convert values
+    Given I land on Home screen
+    Then I Press on Menu icon
+    Then I select "Volume" from menu
+    Then I select "Pint"  from right unit piker
+    When I type "1" on application keyboard
+    Then I should see result as "6.6614"
 
 
 
