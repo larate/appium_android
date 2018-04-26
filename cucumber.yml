@@ -1,0 +1,3 @@
+home: --tags @home --format html --out  report.html --format pretty
+acceptance: --tags  @acceptance --format html --out acceptance.html --format pretty
+gesture:   --tags @gestures  --format html --out gesture.html --format pretty
