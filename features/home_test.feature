@@ -1,7 +1,11 @@
-Feature:
+@home
+Feature: Test Home screen functionality
+
+  Background:
+    Given I land on Home screen
+
   @home_screen
   Scenario: User able to add current conversion to Favorites list
-    Given I land on Home screen
   Then I tap on a right widget
     When I press on Add to Favorites icon
     Then I Press on Menu icon
@@ -9,7 +13,6 @@ Feature:
     And I  verify "Length" added to Favorie conversions list
 
   Scenario: Show All button should be enabled at launch
-    Given I land on Home screen
     Then Show all button should be disabled
     When I type "1" on application keyboard
     Then  Show all button should be enabled
@@ -17,7 +20,6 @@ Feature:
 
 
   Scenario Outline: Verify  default conversion
-    Given I land on Home screen
     When I type "<test>" on application keyboard
     Then I should see result as "<result>"
     Examples:
@@ -32,33 +34,39 @@ Feature:
 
 
   Scenario: User able to search by existing Conversion  type
-      Given I land on Home screen
       Then I press on search icon
       Then I type "Cooking" in search field
       And I press return button on soft keyboard
       Then I see "Cooking" as a current unit converter
       Then Left Unit Picker value should be "Gram"
-      And Right Unit Picker value should ve "Milligram"
+      And Right Unit Picker value should be "Milligram"
 
 
-Scenario: User able to select values frome unit pickers
-Given I land on Home screen
-Then I select "Yard"  from left unit piker
-When I type "1" on application keyboard
-Then I should see result as "91.44"
-#Examples:
-#|value| amount| result   |
-#|Inch |  1    | 2.54     |
-#|Link |  1    | 20.1168  |
+Scenario Outline: User able to select values frome unit pickers
+Then I select "<value>"  from left unit piker
+When I type "<test>" on application keyboard
+Then I should see result as "<result>"
+Examples:
+|value| test| result   |
+|Inch |  1    | 2.54     |
+|Link |  1    | 20.1168  |
 
-  @wip
+
   Scenario: User able to convert values
-    Given I land on Home screen
     Then I Press on Menu icon
     Then I select "Volume" from menu
     Then I select "Pint"  from right unit piker
     When I type "1" on application keyboard
     Then I should see result as "6.6614"
+
+@wip
+    Scenario: User able to switch values
+      Then Left Unit Picker value should be "Foot"
+      And Right Unit Picker value should be "Centimeter"
+      When I press on switch units button
+      Then Left Unit Picker value should be "Centimeter"
+      And Right Unit Picker value should be "Foot"
+
 
 
 

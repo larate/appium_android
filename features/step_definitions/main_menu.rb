@@ -1,4 +1,5 @@
 Given("I land on Home screen") do
+  puts(get_source)
 find_element(id: "action_search")
   
 end

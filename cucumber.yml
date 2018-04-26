@@ -1,2 +1,5 @@
-home_test:   --format html --out home_test.html --format pretty --tags @acceptance
+home_test:       --format html --out report.html --format pretty --tags @acceptance
 conversion_test: --format html --out conversion_test.html --format pretty --tags  @conversions
+home:            --format html --out home_test.html --format pretty --tags @home
+main:            --format html --out main_test.html --format pretty --tags @main
+gestures:            --format html --out main_test.html --format pretty --tags @gestures

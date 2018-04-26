@@ -1,3 +1,4 @@
+@main_menu
 Feature: As a user I want to convert Units and verify my conversion
   @acceptance
   Scenario: When I tap on menu item I should see left side window

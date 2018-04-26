@@ -26,7 +26,7 @@ Then(/^Left Unit Picker value should be "([^"]*)"$/) do |left_unit|
    end
 end
 
-And(/^Right Unit Picker value should ve "([^"]*)"$/) do |right_unit|
+And(/^Right Unit Picker value should be "([^"]*)"$/) do |right_unit|
   element = find_element(name: "#{right_unit}").text
   #element= find_element(id: "select_unit_spinner")[0].text
   puts (element)
@@ -91,4 +91,9 @@ Then(/^I select "([^"]*)"  from right unit piker$/) do |value|
   # end
   # text(value).click
   #find_element(name: "#{value}").click
+end
+
+
+When(/^I press on switch units button$/) do
+  find_element(id: "img_switch").click
 end
